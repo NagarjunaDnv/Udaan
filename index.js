@@ -9,9 +9,16 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const PORT = process.env.PORT | 8000;
 
 
+//  Student to enroll for a course; body = {studentId, courseId}
 app.post('/courseRegistration', courseRegistration);
+
+//  Student to submit a quiz; body = { courseId, studentId, responses}
 app.post('/submitQuiz', submitQuiz);
+
+//  Student to get details of his/her info of the attempted quizzes ->  queryParams must contain studentId
 app.get('/getInfo', getAttempsInfo);
+
+//  Student to get quiz details of a quiz  - > queryParams must contain quizID
 app.get('/getQuizInfo', getQuizInfo);
 
 
